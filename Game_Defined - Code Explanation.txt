@@ -1,0 +1,33 @@
+***IDE Used : Eclipse***
+Game_Robot is a game having 2 classes:
+
+1. RemoteInputCommand :
+  RemoteInputCommand Class is for designing the interface for the game which provides the  "Display menu" to the user in order to play the game.  User can select:
+  (1). A or a : for selecting single robot command to play the game.
+  (2). B or b :  for accepting the file name containing command(s) from user. Filename should contain file path. For now file is placed in src folder. Hence filename should be passed as src\Commands.txt 
+  (3). X or x : For exiting the game.
+  Based on the slection user can proceed.
+  It contains following functions/Methods :
+    (1) displayMenu() :  Method for Displaying Menu to user.
+    (2) start() :  Method for accepting the choice and allow the player to play or exit the game based on selection. 
+    (3) getSingleRobotCommand() : Method for accepting the single robot command from user after selecting choice 'A' or 'a'.
+    (4) getFileRobotCommands() : Method for accepting the file name containing command(s) from user after selecting choice 'B' or 'b' .
+			    For now the file path is  " src/Commands.txt". For now file is src folder. So as Input user can inpot fileName (file path) as src\Commads.txt 
+    (5) main() : Program starts from here.
+  
+
+2. Robot :
+    Robot Class is for defining the direction, distance traveled of the robot based on the commands passed. In addition, it calculates the minimum distance required for the robot to get back to the original position.
+    It contains following functions/Methods :
+    (1) getMinimumUnits() : For calculating the distance that the robot is required to get back to the original position.
+    (2) getCurrentDirection():  For defining the direction of the robot.
+
+
+
+**********************How to run code********************************
+
+1. URL: https://github.com/Rishabh-monash/Game_Pronto_Test
+2. Click on Download and download the folder.
+3. Unzip the folder.
+4. Open the classes using preferred IDE.( src-->default package)
+5. Run the code.

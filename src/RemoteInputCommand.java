@@ -3,25 +3,24 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * RobotInputCommand Class is for designing the interface for the game which provides the 
+ * RemoteInputCommand Class is for designing the interface for the game which provides the 
  *  "Display menu" to the user in order to play the game.  User can select different option to
  *  play or exit the game.
  * @author Rishabh Bhagat
  */
-public class RobotInputCommand
+public class RemoteInputCommand
 {
     private static final String PATTERN = "([F,B,R,L][1-9],)+([F,B,R,L][1-9])$";
     
-    //private Robot robot;
+    private Robot robot;
     private ArrayList<String> inputCommands;
     
     /**
      * Default Constructor
      */
-    public RobotInputCommand() 
-    {
-    	//RobotInputCommand = new RobotInputCommand();
-        //inputCommands = new ArrayList<String>();
+    public RemoteInputCommand() {
+        robot = new Robot();
+        inputCommands = new ArrayList<String>();
     }
     
     /**
@@ -65,7 +64,7 @@ public class RobotInputCommand
             }
         }
     }
-    /**Method for accepting the single robot command from user after selecting choice 'A' or 'a'.*/
+    /*Method for accepting the single robot command from user after selecting choice 'A' or 'a'.*/
     private void getSingleRobotCommand() {
         Scanner console = new Scanner(System.in);
         /*For filename path of the file is to be entered.
@@ -77,8 +76,8 @@ public class RobotInputCommand
             System.out.println("\nInvalid Robot Command Entered\n");
         }
         else {
-           // inputCommands.add(robotCommand);
-            //robot.getMinimumUnits(inputCommands);
+            inputCommands.add(robotCommand);
+            robot.getMinimumUnits(inputCommands);
         }
     }
     /*Method for accepting the file name containing command(s) from user after selecting choice 'B' or 'b' .*/
@@ -89,10 +88,9 @@ public class RobotInputCommand
             Scanner console = new Scanner(System.in);
             System.out.println("\nPlease Enter File Name:");
             String fileName = console.nextLine();
-            
+            /* For now file is src folder. So as Input user can inpot fileName (file path) as src\Commads.txt */ 
             FileReader fileReader = new FileReader(fileName);
             Scanner reader = new Scanner(fileReader);
-            
             while (reader.hasNextLine())
             {
                 String robotCommand = reader.nextLine();
@@ -108,7 +106,7 @@ public class RobotInputCommand
             
             fileReader.close();
             if (!invalidCommands) {
-               // robot.getMinimumUnits(inputCommands);
+            	robot.getMinimumUnits(inputCommands);
             }
         }
         catch (Exception ex)
@@ -118,8 +116,7 @@ public class RobotInputCommand
     }
     public static void main(String[] args)
     {
-    	RobotInputCommand robotObj = new RobotInputCommand();
+    	RemoteInputCommand robotObj = new RemoteInputCommand();
     	robotObj.start();
-    
     }
 }
