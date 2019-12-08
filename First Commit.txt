@@ -1,0 +1,7 @@
+*** First Commit ****
+ RobotInputCommand Class is for designing the interface for the game which provides the  "Display menu" to the user in order to play the game. User can select different option
+ to  play or exit the game.
+ (1). A or a : for selecting single robot command to play the game.
+ (2). B or b :  for accepting the file name containing command(s) from user. Filename should contain file path. For now file is placed in src folder. Hence filename should be passed as src\Commands.txt 
+ (3). X or x : For exiting the game.
+  Based on the slection user can proceed.
